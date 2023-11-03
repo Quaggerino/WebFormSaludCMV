@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="side-image">
+        <img id="logocorp" src="{{ url_for('static', filename='img/logocorp.png') }}" alt="Descripción de la imagen">
+    </div>
+    <div class= "titulo">
+        <h1>Preguntas Frecuentes:</h2>
+        <h2>Valora la Salud en Valparaíso</h2>
+        <h2>¡Tu voz en acción!</h2>
+        </div>
+    <div class="faq">
+        <div class="faq-item">
+            <button class="faq-question">¿Cómo puedo participar en la encuesta?</button>
+            <div class="faq-answer">
+                <p>Puede participar en la encuesta haciendo clic en este <a href="/">enlace</a>.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Por qué es importante mi participación en esta encuesta?</button>
+            <div class="faq-answer">
+                <p>Su participación en esta encuesta ayudará a mejorar y fortalecer la calidad de los servicios de salud. Su voz y su opinión son fundamentales para identificar áreas de oportunidad y mejorar la atención que se brinda en los centros de salud.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Qué se hará con la información que proporcione?</button>
+            <div class="faq-answer">
+                <p>La información proporcionada será usada de forma anónima para analizar el sentimiento de la población y priorizar decisiones y mejoras en los centros de salud. No se recolecta información sensible o privada.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Cómo se protege mi privacidad?</button>
+            <div class="faq-answer">
+                <p>Su privacidad es nuestra prioridad. No recolectamos información sensible o privada y todas las respuestas son anónimas y se manejan con la máxima confidencialidad.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Cómo se utilizarán mis respuestas a la pregunta abierta?</button>
+            <div class="faq-answer">
+                <p>Sus respuestas a la pregunta abierta serán analizadas para evaluar el sentimiento general y para identificar problemas comunes que podrían ser mejorados en los centros de salud.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Cuánto tiempo tomará completar la encuesta?</button>
+            <div class="faq-answer">
+                <p>Completar la encuesta debería tomarle menos de 3 minutos.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">¿Cómo puedo asegurarme de que mis respuestas son verdaderamente anónimas?</button>
+            <div class="faq-answer">
+                <p>No recolectamos ninguna información que pueda identificarle, como nombres, direcciones o números de teléfono. Además, todas las respuestas se analizan en conjunto y no individualmente, garantizando así su anonimato.</p>
+            </div>
+        </div>
+        
+        <!-- Pregunta nueva sobre el contador de palabras -->
+        <div class="faq-item">
+            <button class="faq-question">¿Por qué mi respuesta no puede exceder los 512 caracteres?</button>
+            <div class="faq-answer">
+                <p>El límite de 512 caracteres asegura que las respuestas sean concisas y relevantes, permitiendo un análisis más efectivo de los datos. Un contador de palabras visible le ayudará a no exceder este límite.</p>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<a href="{{ url_for('home') }}" class="faq-circle" aria-label="Volver al inicio">
+    <span>📄</span>
+    <div class="arrow" id="arrow"></div> <!-- Flecha -->
+</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

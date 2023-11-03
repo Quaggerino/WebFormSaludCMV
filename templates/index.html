@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta CESFAM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="side-image">
+        <img id="logocorp" src="{{ url_for('static', filename='img/logocorp.png') }}" alt="Descripción de la imagen">
+    </div>
+    <div class= "titulo">
+    <h1>Encuesta:</h2>
+    <h2>Valora la Salud en Valparaíso</h2>
+    <h2>¡Tu voz en acción!</h2>
+    </div>
+    <p>Queremos mejorar y fortalecer lo que hacemos bien, pero solo podremos lograrlo con tu ayuda. </p>
+    <p>¿Te importaría responder a una breve encuesta? ¡Solo te llevará menos de 3 minutos!</p>
+    <form action="/" method="post">  <!-- Añadir la acción del formulario y el método -->
+        <div class="field">
+            <label for="edad">Indique su edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Ingrese su edad" min="14" max="120">
+        </div>
+        
+
+    <div class="field">
+        <label for="genero">¿Con qué género te identificas?</label>
+        <select id="genero" name="genero">
+            <option value="" disabled selected hidden>Seleccione su genero</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Transmasculino">Transmasculino</option>
+            <option value="Transfemenino">Transfemenino</option>
+            <option value="No binario">No binario</option>
+            <option value="Otro">Otro género</option> 
+            <option value="Sin especificar">Prefiero no responder</option> 
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="cesfam">¿A qué centro de salud perteneces?</label>
+        <select id="cesfam" name="cesfam">
+            <!-- Nivel de Satisfacción -->
+                <option value="" disabled selected hidden>Seleccione su centro de salud</option>
+                <option value="CECOSF Juan Pablo II">CECOSF Juan Pablo II</option>
+                <option value="CECOSF Laguna Verde">CECOSF Laguna Verde</option>
+                <option value="CECOSF Porvenir Bajo">CECOSF Porvenir Bajo</option>
+                <option value="CESFAM Barón">CESFAM Barón</option>
+                <option value="CESFAM Cordillera">CESFAM Cordillera</option>
+                <option value="CESFAM Esperanza">CESFAM Esperanza</option>
+                <option value="CESFAM Las Cañas">CESFAM Las Cañas</option>
+                <option value="CESFAM Marcelo Mena">CESFAM Marcelo Mena</option>
+                <option value="CESFAM Padre Damián">CESFAM Padre Damián</option>
+                <option value="CESFAM Placeres">CESFAM Placeres</option>
+                <option value="CESFAM Placilla">CESFAM Placilla</option>
+                <option value="CESFAM Puertas Negras">CESFAM Puertas Negras</option>
+                <option value="CESFAM Quebrada Verde">CESFAM Quebrada Verde</option>
+                <option value="CESFAM Reina Isabel">CESFAM Reina Isabel</option>
+                <option value="CESFAM Rodelillo">CESFAM Rodelillo</option>
+                
+        </select>
+    </div>
+        <!-- Nivel de Satisfacción -->
+    <div class="field">
+        <label for="frecuencia">¿Con qué frecuencia asistes al CESFAM cada año?</label>
+        <select id="frecuencia" name="frecuencia">
+            <option value="" disabled selected hidden>Seleccione su frecuencia</option>
+            <option value="Siempre (No he faltado a ningún control)">Siempre (No he faltado a ningún control)</option>
+            <option value="Regularmente (He faltado a algún control)">Regularmente (He faltado a algún control)</option>
+            <option value="Ocasionalmente (Más de una vez al año)">Ocasionalmente (Más de una vez al año)</option>
+            <option value="Raramente o Nunca (0 a 1 vez al año)">Raramente o Nunca (0 a 1 vez al año)</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>¿Qué nivel de satisfacción tiene con los servicios entregados por el CESFAM?</label>
+        <div class="feedback-scale2">
+            <div class="label-container">
+                <span class="scale-label left-label">Muy Insatisfecho</span> <!-- Etiqueta del extremo izquierdo -->
+                <span class="scale-label right-label">Muy Satisfecho</span> <!-- Etiqueta del extremo derecho -->
+            </div>
+            <div class="numbers2">
+                <span onclick="highlightNumber(this, 1)" data-value="1">1</span>
+                <span onclick="highlightNumber(this, 1)" data-value="2">2</span>
+                <span class="active" onclick="highlightNumber(this, 1)" data-value="3">3</span>
+                <span onclick="highlightNumber(this, 1)" data-value="4">4</span>
+                <span onclick="highlightNumber(this, 1)" data-value="5">5</span>
+            </div>
+            <input type="hidden" id="satisfaccion" name="satisfaccion" value="3">
+        </div>
+    </div>
+    
+    
+    <div class="field">
+        <label>Dada su última experiencia con los servicios otorgados por el CESFAM, ¿Recomendaría a un familiar o amigo?</label>
+        <div class="feedback-scale">
+            <div class="label-container">
+                <span class="scale-label left-label">No lo recomendaría</span> <!-- Etiqueta del extremo izquierdo -->
+                <span class="scale-label right-label">Definitivamente lo recomendaría</span> <!-- Etiqueta del extremo derecho -->
+            </div>
+            <div class="numbers">
+                <span onclick="highlightNumber(this, 2)" data-value="0">0</span>
+                <span onclick="highlightNumber(this, 2)" data-value="1">1</span>
+                <span onclick="highlightNumber(this, 2)" data-value="2">2</span>
+                <span onclick="highlightNumber(this, 2)" data-value="3">3</span>
+                <span onclick="highlightNumber(this, 2)" data-value="4">4</span>
+                <span class="active" onclick="highlightNumber(this, 2)" data-value="5">5</span>
+                <span onclick="highlightNumber(this, 2)" data-value="6">6</span>
+                <span onclick="highlightNumber(this, 2)" data-value="7">7</span>
+                <span onclick="highlightNumber(this, 2)" data-value="8">8</span>
+                <span onclick="highlightNumber(this, 2)" data-value="9">9</span>
+                <span onclick="highlightNumber(this, 2)" data-value="10">10</span>
+            </div>
+            <input type="hidden" id="recomendacion" name="recomendacion" value="5">
+        </div>
+    </div>
+    
+    
+
+
+    <div class="field">
+        <label for="razon">Cuéntenos la razón por la que evalúa con esa nota los servicios entregados:</label>
+        <textarea id="razon" name="razon" rows="4" placeholder="Escriba su comentario" maxlength="512" minlength="25" oninput="updateCharCount()"></textarea>
+        <div id="charCount">512 caracteres restantes</div>
+    </div>
+    
+    
+    <div class="field button-container">
+        <button type="submit" class="submit-btn">Enviar Respuestas</button>
+    </div>
+</form>
+</div>
+
+<a href="{{ url_for('faq') }}" class="faq-circle" aria-label="Preguntas frecuentes">
+    <span>❔</span>
+    <div class="arrow" id="arrow"></div> <!-- Flecha -->
+</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

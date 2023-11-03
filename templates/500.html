@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="side-image2">
+            <img id="logocorp" src="{{ url_for('static', filename='img/logocorp.png') }}" alt="Descripción de la imagen">
+        </div>
+        <h1 id="h1404">Error 500: Internal Server Error.</h1>
+        <p>Ha ocurrido un error con el servidor.</p>
+        <div class="field button-container">
+            <a href="{{ url_for('home') }}" class="submit-btn">Regresar al inicio</a>
+        </div>
+    </div>
+</body>
+</html>

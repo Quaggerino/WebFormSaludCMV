@@ -1,0 +1,575 @@
+body::before {
+    content: "";
+    position: fixed; /* Changed from 'fixed' to 'absolute' */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('img/background.png');
+    background-size: cover; /* You might want to use cover to make sure your image covers the element */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 0px;
+}
+
+body {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    margin: 0px;
+    padding: 20px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    min-height: 95vh; /* Altura mínima del viewport */
+    
+}
+
+#logocorp {
+width: 140px;
+position: absolute;
+}
+
+
+.side-image {
+    right: 735px;
+    top: 0px;
+    position: absolute;
+}
+
+.side-image2 {
+    right: 695px;
+    top: 0px;
+    position: absolute;
+}
+
+.side-image3 {
+    right: 735px;
+    top: 0px;
+    position: absolute;
+}
+
+p {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.65); 
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 65px rgba(0, 0, 0, 0.2);
+}
+
+.container:hover {
+    max-width: 700px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0px 0px 65px rgba(0, 0, 0, 0.4); /* Sombra más intensa y con mayor dispersión */
+    transition: box-shadow 0.3s; 
+    background-color: rgba(255, 255, 255, 0.65); 
+    backdrop-filter: blur(5px); 
+    border-radius: 10px; 
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    width: 100px;  /* Establece el ancho de tu imagen */
+    height: 100px; /* Establece el alto de tu imagen */
+    background-size: cover; 
+    z-index: -1;  /* Para que las imágenes queden detrás del contenedor */
+}
+
+
+.titulo {
+    width: auto;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    color: #333; /* Texto un poco más oscuro */
+    font-size: 2.0em; /* Texto un poco más grande */
+    font-family: "Montserrat", Sans-serif;
+}
+
+#h1404 {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    padding-top: 40px;
+    color: #333; /* Texto un poco más oscuro */
+    font-size: 2.0em; /* Texto un poco más grande */
+    font-family: "Montserrat", Sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    color: #444444; /* Texto un poco más oscuro */
+    font-size: 1.4em; /* Texto un poco más grande */
+    font-family: "Montserrat", Sans-serif;
+}
+
+.feedback-scale2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta el espacio entre los elementos */
+}
+
+.numbers2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-grow: 1; /* Permitir que la escala crezca para llenar el espacio entre las etiquetas */
+}
+
+
+.scale-label {
+    font-size: 1em;
+    color: #555;
+    flex-shrink: 0; /* Esto evita que las etiquetas se reduzcan en tamaño */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Espacio entre las etiquetas y los números */
+    margin-top: -10px;
+    width: 100%;
+}
+
+.left-label {
+    text-align: left;
+}
+
+.right-label {
+    text-align: right;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px; /* Espaciado aumentado */
+    color: #555; /* Texto un poco más oscuro */
+    font-size: 1.0em; /* Texto un poco más grande */
+    padding-bottom: 5px;
+}
+
+
+
+select, input[type="text"], textarea, input[type="radio"], input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Más padding */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #333333;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Efecto de transición suave */
+
+    /* Sombras suaves al enfocar */
+    &:focus {
+        border-color: #041C4C;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        outline: none; /* Quitar el borde de foco predeterminado del navegador */
+    }
+}
+
+
+select:hover, select:focus, input[type="text"]:hover, textarea:hover, input[type="radio"]:hover, input[type="number"]:hover {
+    border-color: #041C4C;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+
+#frecuencia option:disabled {
+    color: #999;
+}
+
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+    padding: 0;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Más espacio entre elementos */
+}
+
+.feedback-scale, .feedback-scale2 {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px; /* Más espacio entre números */
+    
+}
+
+.numbers2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px; /* Más espacio entre números */
+}
+
+.numbers span {
+    padding: 12px 12px; /* Más padding */
+    cursor: pointer;
+    border: 3px solid #041C4C;
+    transition: all 0.3s; /* Efecto de transición suave */
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    background-color: #041C4C;
+    color: #f4f4f4;
+    font-size: 18px;
+    
+}
+
+.numbers2 span {
+    padding: 12px 50px; /* Más padding */
+    cursor: pointer;
+    border: 3px solid #041C4C;
+    transition: all 0.3s; /* Efecto de transición suave */
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    background-color: #041C4C;
+    color: #f4f4f4;
+    font-size: 18px;
+}
+
+.numbers span:hover, .numbers2 span:hover {
+    background: #f2e863;
+    color: #041C4C;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave al pasar el mouse */
+}
+
+.numbers span.active, .numbers2 span.active {
+    background-color: rgba(255, 255, 255, 0.90); /* Fondo blanco con 70% de transparencia */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    border: 3px solid #041C4C;
+    color: #041C4C;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra suave para números activos */
+}
+
+
+
+
+/* Texto comentario */
+
+
+/* Estilos para el área de campo en sí */
+.field {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Estilos para la etiqueta/label */
+.field label {
+    font-weight: 600;  /* Hacer el texto un poco más audaz */
+    margin-bottom: 8px;  /* Espaciado entre la etiqueta y el campo de texto */
+    color: #333;  /* Color oscuro para el texto de la etiqueta */
+}
+
+/* Estilos para el campo de texto/textarea */
+.field textarea {
+    width: 100%;  /* Ocupar todo el ancho disponible */
+    padding: 12px;  /* Espaciado interno para el texto */
+    border: 1px solid #ccc;  /* Borde sutil */
+    border-radius: 8px;  /* Bordes ligeramente redondeados */
+    font-size: 16px;  /* Tamaño de fuente un poco más grande */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* Sombra suave para darle profundidad */
+    transition: border-color 0.2s, box-shadow 0.2s;  /* Efectos de transición suave */
+    resize: none;  /* Permitir que el usuario redimensione el área de texto verticalmente */
+    padding-bottom: 72px;
+    overflow: hidden;
+    
+}
+
+/* Estilo al enfocarse/focus en el textarea */
+.field textarea:focus {
+    border-color: #041C4C;  /* Cambiar el color del borde a un azul brillante cuando está enfocado */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Una sombra un poco más grande para el foco */
+    outline: none;  /* Quitar el borde de foco predeterminado del navegador */
+}
+
+.field textarea:hover {
+    border-color: #041C4C;  /* Cambiar el color del borde a un azul brillante cuando está enfocado */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Una sombra un poco más grande para el foco */
+    outline: none;  /* Quitar el borde de foco predeterminado del navegador */
+}
+
+/* Estilo para el placeholder del textarea */
+.field textarea::placeholder {
+    font-family: "Montserrat", Sans-serif;
+
+    color: #aaa;  /* Color de texto claro */
+}
+
+
+
+/* Centrar el botón */
+.button-container {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 18px;
+
+    
+}
+
+.submit-btn {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    background-color: #041C4C; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 10px 30px; /* Espaciado alrededor del texto */
+    border: none; /* Quitar borde */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave del color de fondo y transformación */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 3px solid #041C4C;
+    text-decoration: none;
+
+    
+}
+
+.submit-btn:hover {
+    background-color: #f2e863; /* Color de fondo al pasar el cursor por encima */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra un poco más grande en hover */
+    color: #041C4C;
+    font-weight: 600;
+    border: 3px solid #041C4C;
+    font-size: 18px;
+
+}
+
+.submit-btn:active {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra original cuando se presiona */
+}
+
+.submit-btn:focus {
+    outline: none; /* Quitar el borde de foco predeterminado del navegador */
+}
+
+
+.faq-circle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #041C4C;
+    color: #ffffff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: bold;
+    box-shadow: 0 0 65px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+    border: 3px solid #041C4C;
+    text-decoration: none;
+    animation: breathe 1s infinite;
+
+}
+
+.faq-circle span{
+    display: block;
+    position: absolute;
+    height: 54px;
+}
+
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+
+.faq-circle:hover {
+    background-color: #f2e863;
+    color: #041C4C;
+    border: 3px solid #041C4C;
+    box-shadow: 0 0 65px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    opacity: 1.0;
+}
+
+.arrow {
+    position: absolute;
+    width: 12px; /* Grosor del tallo de la flecha */
+    height: 60px; /* Longitud del tallo de la flecha */
+    background-color: #ffffff; /* Color del tallo de la flecha */
+    bottom: 120px; /* posición inicial de la flecha en relación al círculo */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveDown 2s forwards, fadeOut 8s forwards; /* animación para mover y desaparecer la flecha */
+    box-shadow: 0 0 65px rgba(0, 0, 0, 0.4);
+
+}
+
+.arrow::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 40px solid #ffffff; /* color de la punta de la flecha */
+    bottom: -30px; /* posición de la punta de la flecha en relación al tallo */
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        bottom: 960px; /* posición de inicio de la animación */
+    }
+    to {
+        bottom: 120px; /* posición final de la animación */
+    }
+}
+
+
+/* faq */
+
+
+
+
+.faq {
+    margin-top: 0px;
+    
+}
+
+.faq-item {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+
+.faq-answer {
+    padding: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-height: 0; /* Inicialmente se establece en 0 para ocultar las respuestas */
+    transition: max-height 0.3s ease-in-out;
+}
+
+.faq-question.active + .faq-answer {
+    max-height: 500px; /* Un valor suficientemente alto para mostrar todo el contenido. Puedes ajustarlo según tus necesidades */
+}
+
+.faq-answer p {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.faq-question {
+    background-color: #041C4C;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    border: 3px solid #041C4C;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s, box-shadow 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f2e863;
+    color: #041C4C;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.faq-question:active {
+    transform: scale(0.98);
+}
+
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin: 20px 0;
+    margin-bottom: -15px;
+}
+
+
+#charCount {
+    font-weight: 100;
+    font-size: 16px;
+    position: inherit;
+    color: #afafaf;
+    --margin: 20px 0;
+    margin-top: -25px;
+    margin-left: 500px;
+    text-align: right;
+    padding-right: 20px;
+
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Muchas gracias!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="side-image3">
+            <img id="logocorp" src="{{ url_for('static', filename='img/logocorp.png') }}" alt="Descripción de la imagen">
+        </div>
+
+        <h1 id="h1404">¡Muchas gracias!</h1>
+        <p>Su opinión es muy valiosa para nosotros y nos ayuda a mejorar nuestros servicios. Puedes cerrar esta ventana o bien puedes completar la encuesta de nuevo con el botón a la esquina inferior derecha.</p>
+        <div class="field button-container">
+            <a href="{{ url_for('home') }}" class="submit-btn">Regresar al inicio</a>
+        </div>
+    </div>
+</body>
+</html>
