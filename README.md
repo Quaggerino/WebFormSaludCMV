@@ -1,7 +1,5 @@
 ﻿# MonitoreoSaludCMV
 
-## MonitoreoSaludCMV:
-
 This Flask application is designed to collect health-related survey data from patients and store it in a MongoDB collection. The survey aims to gather feedback regarding health services in Valparaíso. Here is a brief explanation of each segment:
 
 1. **Environment Variables**: The app begins by loading `.env.development` file where sensitive information is stored like the `SECRET_KEY` for Flask and the MongoDB connection URI.
