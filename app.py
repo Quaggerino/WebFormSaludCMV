@@ -17,15 +17,13 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 # configuracion del mongodb
 uri = os.getenv('MONGODB_URI')
 client = MongoClient(uri)
-#db = client['capstone']
-#collection = db['form']
 db = client['cmvalparaisoDas']
 collection = db['opinionSaludValparaiso']
 
-# Getting the rate limiter MongoDB URI from environment variables
+# mongodb URI desde el .env para el rate limiter de flask
 rate_limiter_db_uri = os.getenv('RATE_LIMITER_URI')
 
-# Limiting the number of requests
+# definiendo el rate limiter para limitar las solicitudes por IP
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
