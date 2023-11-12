@@ -38,19 +38,3 @@ The HTML template renders a survey form with various input fields:
 4. **FAQ Link**: An accessible link to a FAQ page is provided, featuring a question mark icon and a decorative arrow.
 
 5. **Scripts**: The template links to an external JavaScript file, presumably for form interactions and validation.
-
-### Comments on the Implementation:
-
-1. **Accessibility**: The use of `aria-label` in the FAQ link improves accessibility for screen reader users.
-   
-2. **Validation**: While the Flask app attempts to validate data on the server-side, there is no client-side validation visible in the HTML provided, except for some constraints on the input fields like age range.
-
-3. **Security**: The CSP is a good practice, but the use of `'unsafe-inline'` for script and style sources undermines its effectiveness. This should be addressed if possible.
-
-4. **Styling**: The form uses a separate CSS file, which isn't provided but is referenced in the HTML.
-
-5. **Error Handling**: The server-side application has error handlers in place to provide feedback to the user in case of HTTP errors.
-
-6. **Rate Limiter Feedback**: In case of rate limiting, a custom message is displayed, but it may benefit from providing the user information on when they can make a request again.
-
-7. **Static Content**: Static content like CSS and images is served through dedicated routes, which use Flask's `url_for` function to generate URLs.
