@@ -66,7 +66,7 @@ def home():
 
             # Check for empty fields
             # Verificar si hay campos vacíos
-            if not (edad and genero and cesfam and frecuencia and satisfaccion and recomendacion and razon):
+            if not (edad and genero and cesfam and frecuencia and razon):
                 raise BadRequest("Todos los campos deben ser rellenados.")
 
             # Insert data into MongoDB
