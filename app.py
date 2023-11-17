@@ -24,16 +24,18 @@ collection = db['opinionSaludValparaiso']
 
 # MongoDB URI from the .env for Flask rate limiter
 # URI de MongoDB desde el .env para el limitador de tasa de Flask
-rate_limiter_db_uri = os.getenv('RATE_LIMITER_URI')
+#rate_limiter_db_uri = os.getenv('RATE_LIMITER_URI')
 
 # Defining the rate limiter to limit requests per IP
 # Definiendo el limitador de tasa para limitar solicitudes por IP
+"""
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
     storage_uri=rate_limiter_db_uri,
     strategy='fixed-window'
 )
+"""
 
 # Apply Content-Security-Policy (CSP) to each response
 # Aplica la Política de Seguridad de Contenido (CSP) a cada respuesta
@@ -45,7 +47,7 @@ def apply_csp(response):
 # Home route
 # Ruta de inicio
 @app.route('/', methods=['GET', 'POST'])
-@limiter.limit("60 per 30 minute")
+#@limiter.limit("60 per 30 minute")
 def home():
     if request.method == 'POST':
         try:
